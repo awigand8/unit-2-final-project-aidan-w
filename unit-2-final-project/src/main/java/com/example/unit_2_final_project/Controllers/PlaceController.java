@@ -20,4 +20,11 @@ public class PlaceController {
     public List<Place> getAllPlaces() {
         return placeRepository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Place getPlaceById(@PathVariable int id) {
+        return placeRepository.findById(id).orElse(null);
+    }
 }
+
+

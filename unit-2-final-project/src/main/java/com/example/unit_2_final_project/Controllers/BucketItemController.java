@@ -26,6 +26,11 @@ public class BucketItemController {
         return bucketItemRepository.save(item);
     }
 
+    @GetMapping
+    public List<BucketItem> getBucketList() {
+        return bucketItemRepository.findAll();
+    }
+
     @DeleteMapping("/{id}")
     public void deleteItem(@PathVariable int id) {
         bucketItemRepository.deleteById(id);
