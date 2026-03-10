@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import Button from './Button';
 import Card from './Card';
 
-function DynamicPage({ title, data}) {
-    const { places, addBucketItem } = useContext(DataContext);
+function DynamicPage( {title, data}) {
+    // const { places, addBucketItem } = useContext(DataContext);
     const [selectedItem, setSelectedItem] = useState(null)
 
 
