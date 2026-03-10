@@ -6,12 +6,16 @@ import jakarta.persistence.*;
 public class Place {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
-
     private String category; // "attraction" or "food"
+    private String shortdesc;
+
+    @Lob
+    private String description;
+
+    private String imageUrl;
 
     public Place() {
     }
@@ -44,5 +48,30 @@ public class Place {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public String getShortdesc() {
+        return shortdesc;
+    }
+
+    public void setShortdesc(String shortdesc) {
+        this.shortdesc = shortdesc;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
+
 
