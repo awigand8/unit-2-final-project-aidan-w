@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from './Button';
 import Card from './Card';
 
-function DynamicPage({ title, data, onAdd }) {
+function DynamicPage({ title, data}) {
+    const { places, addBucketItem } = useContext(DataContext);
     const [selectedItem, setSelectedItem] = useState(null)
 
 
     return (
         <div className="dynamic-container">
-            {selectedItem ? (
+            {selectedItem ? ( //show item view if not null
                 <>
 
                     <div className="selected-card">
@@ -35,7 +36,7 @@ function DynamicPage({ title, data, onAdd }) {
                     />
 
                 </>
-            ) : (
+            ) : ( //show list view if null
                 <>
                     <h1>{title}</h1>
 
