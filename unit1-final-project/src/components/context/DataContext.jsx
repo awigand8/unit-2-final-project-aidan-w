@@ -9,7 +9,7 @@ const [places, setPlaces] = useState([]);
 
 const fetchPlaces = async () => {
     try {
-    const response = await fetch('http://localhost:8080/bucketlist/places');
+    const response = await fetch('http://localhost:8080/places');
 
     const data = await response.json();
 
@@ -24,7 +24,7 @@ const [bucketList, setBucketList] = useState([]);
 
 const fetchBucketList = async () => {
     try {
-    const response = await fetch('http://localhost:8080/bucketlist/bucket-items');
+    const response = await fetch('http://localhost:8080/bucket-items');
 
     const data = await response.json();
 
@@ -36,7 +36,7 @@ const fetchBucketList = async () => {
 
 const addBucketItem = async (item) => {
     try {
-    const response = await fetch('http://localhost:8080/bucketlist/bucket-items', {
+    const response = await fetch('http://localhost:8080/bucket-items', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
