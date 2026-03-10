@@ -1,13 +1,13 @@
 import "../Card.css";
 
-function Card({ onClick }) {
-    const { places } = useContext(DataContext);
+function Card({ title, description, shortdesc, image, onClick }) {
+    
     return (
         <div className="card" onClick={onClick}>
             <div className="card-container">
-                <img src={places.image_url} alt={places.name} className="card-image" />
-                <h4>{places.name}</h4>
-                <p>{places.description || places.shortdesc}</p>
+                <img src={image} alt={title} className="card-image" />
+                <h4>{title}</h4>
+                <p>{description || shortdesc}</p>
             </div>
         </div>
     );

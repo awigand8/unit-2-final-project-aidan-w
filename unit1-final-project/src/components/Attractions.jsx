@@ -6,7 +6,7 @@ import { DataContext } from './context/DataContext';
 function Attractions() {
     const { places, addBucketItem } = useContext(DataContext);
 
-    const attractions = places.filter(place => place.category === "attraction");
+    const attractions = places.filter(place => place.category === "Attraction");
 
     return (
         <div>

@@ -6,7 +6,7 @@ import DynamicPage from './DynamicPage';
 function Food() {
     const { places, addBucketItem } = useContext(DataContext);
     
-    const food = places.filter(place => place.category === "food");
+    const food = places.filter(place => place.category === "Food");
     return (
         <div>
             <DynamicPage title="Food" data={food} onAdd={addBucketItem} />

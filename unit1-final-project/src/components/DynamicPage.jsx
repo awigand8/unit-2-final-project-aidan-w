@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from './Button';
 import Card from './Card';
 
-function DynamicPage( {title, data}) {
-    // const { places, addBucketItem } = useContext(DataContext);
+function DynamicPage( { title, data, onAdd }) {
     const [selectedItem, setSelectedItem] = useState(null)
 
 
@@ -16,7 +15,7 @@ function DynamicPage( {title, data}) {
                         <Card
                             title={selectedItem.name}
                             description={selectedItem.description}
-                            image={selectedItem.image}
+                            image={selectedItem.image_url}
                         />
                     </div>
 
@@ -46,9 +45,8 @@ function DynamicPage( {title, data}) {
                                 key={item.id}
                                 title={item.name}
                                 shortdesc={item.shortdesc}
-                                image={item.image}
+                                image={item.image_url}
                                 onClick={() => setSelectedItem(item)}
-
                             />
                         ))}
                     </div>
