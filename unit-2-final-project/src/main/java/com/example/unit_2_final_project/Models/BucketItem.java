@@ -8,10 +8,10 @@ public class BucketItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private boolean completed;
 
     @ManyToOne
+    @JoinColumn(name = "place_id")
     private Place place;
 
     public BucketItem() {}
