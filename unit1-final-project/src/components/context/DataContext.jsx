@@ -67,13 +67,35 @@ const deleteBucketItem = async (id) => {
     }
 };
 
+const markBucketItemComplete = async (id) => {
+    try {
+        const response = await fetch(`http://localhost:8080/bucket-items/${id}/complete`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `ERROR - Status ${response.status}`);
+        }
+            const updatedItem = await response.json();
+        
+            setBucketItems((prev) =>
+                 prev.map(item => item.id === updatedItem.id ? updatedItem : item)); //if the item matches the updated one, replace it, otherwise keep it the same
+        
+    } catch (error) {
+        console.error("Error marking bucket list item complete:", error);
+    }
+};
+
 useEffect(() => { 
     fetchPlaces();
     fetchBucketItems(); 
 }, []);
 
 return (
-    <DataContext.Provider value={{ places, bucketItems, addBucketItem, deleteBucketItem }}>
+    <DataContext.Provider value={{ places, bucketItems, addBucketItem, deleteBucketItem, markBucketItemComplete }}>
         {children}
     </DataContext.Provider>
 )

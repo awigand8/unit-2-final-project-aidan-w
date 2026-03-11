@@ -4,7 +4,7 @@ import { DataContext } from "./context/DataContext";
 import { useContext } from "react";
 
 function BucketList() {
-    const { bucketItems, deleteBucketItem } = useContext(DataContext); 
+    const { bucketItems, deleteBucketItem, markBucketItemComplete } = useContext(DataContext); 
     return (
         <div>
             <h1>Bucket List</h1>
@@ -21,6 +21,11 @@ function BucketList() {
                     label="Delete"
                     className="delete-button"
                     onClick={() => deleteBucketItem(item.id)}
+                    />
+                    <Button
+                    label="Mark Complete"
+                    className="complete-button"
+                    onClick={() => markBucketItemComplete(item.id)}
                     />
                     </span>
                 </li>
