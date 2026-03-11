@@ -1,0 +1,76 @@
+.card {
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 1rem;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-container {
+  padding: 1rem;
+}
+
+.card-container h4 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.card-container p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Selected (detail) card */
+.selected-card .card {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  cursor: default;
+  transform: none;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.selected-card .card-image {
+  height: 350px;
+}
+
+.selected-card .card-container h4 {
+  font-size: 1.8rem;
+}
+
+.selected-card .card-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin: 2rem 0;
+}
+
+.card-grid .card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
