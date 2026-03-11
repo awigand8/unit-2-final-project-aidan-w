@@ -20,15 +20,15 @@ const fetchPlaces = async () => {
 }
 
 //BUCKET LIST
-const [bucketList, setBucketList] = useState([]);
+const [bucketItems, setBucketItems] = useState([]);
 
-const fetchBucketList = async () => {
+const fetchBucketItems = async () => {
     try {
     const response = await fetch('http://localhost:8080/bucket-items');
 
     const data = await response.json();
 
-    setBucketList(data);
+    setBucketItems(data);
     } catch (error) {
         console.error("Error fetching bucket list items:", error);
     }
@@ -36,7 +36,7 @@ const fetchBucketList = async () => {
 
 const addBucketItem = async (item) => {
     try {
-    const response = await fetch('http://localhost:8080/bucket-items', {
+    const response = await fetch('http://localhost:8080/bucket-items?placeId={placeId}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const addBucketItem = async (item) => {
 
     const newItem = await response.json();
 
-    setBucketList((prev) => [...prev, newItem]);
+    setBucketItems((prev) => [...prev, newItem]);
     } catch (error) {
         console.error("Error adding bucket list item:", error);
     }
@@ -54,11 +54,11 @@ const addBucketItem = async (item) => {
 
 useEffect(() => { 
     fetchPlaces();
-    fetchBucketList() 
+    fetchBucketItems() 
 }, []);
 
 return (
-    <DataContext.Provider value={{ places, bucketList, addBucketItem }}>
+    <DataContext.Provider value={{ places, bucketItems, addBucketItem }}>
         {children}
     </DataContext.Provider>
 )

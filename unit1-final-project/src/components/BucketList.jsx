@@ -1,23 +1,26 @@
 import Copyright from "./Copyright";
 import Button from './Button';
+import { DataContext } from "./context/DataContext";
+import { useContext } from "react";
 
-function BucketList({ bucketList, onDelete }) {
+function BucketList() {
+    const { bucketItems } = useContext(DataContext); 
     return (
         <div>
             <h1>Bucket List</h1>
 
             <div className="bucket-list-container">
-                {bucketList.length === 0 && <p>Nothing yet...</p>}
+                {bucketItems.length === 0 && <p>Nothing yet...</p>}
 
         <ol>
-            {bucketList.map((item, index) => 
-                <li key={index}>
+            {bucketItems.map((item) => 
+                <li key={item.id}>
                     <span className="bucket-list-item">
-                        {item}
+                        {item.place.name}
                     <Button 
                     label="Delete"
                     className="delete-button"
-                    onClick={ () => onDelete(item)}
+                    
                     />
                     </span>
                 </li>
