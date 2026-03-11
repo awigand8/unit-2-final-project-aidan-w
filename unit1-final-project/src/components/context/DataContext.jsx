@@ -34,14 +34,13 @@ const fetchBucketItems = async () => {
     }
 }
 
-const addBucketItem = async (item) => {
+const addBucketItem = async (place) => {
     try {
-    const response = await fetch('http://localhost:8080/bucket-items?placeId={placeId}', {
+    const response = await fetch(`http://localhost:8080/bucket-items?placeId=${place.id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(item)
     });
 
     const newItem = await response.json();
@@ -54,7 +53,7 @@ const addBucketItem = async (item) => {
 
 useEffect(() => { 
     fetchPlaces();
-    fetchBucketItems() 
+    fetchBucketItems(); 
 }, []);
 
 return (
