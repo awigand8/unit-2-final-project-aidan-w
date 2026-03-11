@@ -51,13 +51,29 @@ const addBucketItem = async (place) => {
     }
 };
 
+const deleteBucketItem = async (id) => {
+    try {
+        const response =await fetch(`http://localhost:8080/bucket-items/${id}`, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `ERROR - Status ${response.status}`);
+        } else {
+            setBucketItems((prev) => prev.filter(item => item.id !== id));
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
+};
+
 useEffect(() => { 
     fetchPlaces();
     fetchBucketItems(); 
 }, []);
 
 return (
-    <DataContext.Provider value={{ places, bucketItems, addBucketItem }}>
+    <DataContext.Provider value={{ places, bucketItems, addBucketItem, deleteBucketItem }}>
         {children}
     </DataContext.Provider>
 )

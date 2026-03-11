@@ -4,7 +4,7 @@ import { DataContext } from "./context/DataContext";
 import { useContext } from "react";
 
 function BucketList() {
-    const { bucketItems } = useContext(DataContext); 
+    const { bucketItems, deleteBucketItem } = useContext(DataContext); 
     return (
         <div>
             <h1>Bucket List</h1>
@@ -20,7 +20,7 @@ function BucketList() {
                     <Button 
                     label="Delete"
                     className="delete-button"
-                    
+                    onClick={() => deleteBucketItem(item.id)}
                     />
                     </span>
                 </li>
