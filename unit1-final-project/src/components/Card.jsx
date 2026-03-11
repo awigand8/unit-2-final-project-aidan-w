@@ -1,7 +1,7 @@
 import "../Card.css";
 
 function Card({ title, description, shortdesc, image, onClick }) {
-    
+
     return (
         <div className="card" onClick={onClick}>
             <div className="card-container">

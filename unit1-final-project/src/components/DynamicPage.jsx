@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from './Button';
 import Card from './Card';
 
-function DynamicPage( { title, data, onAdd }) {
+function DynamicPage({ title, data, onAdd }) {
     const [selectedItem, setSelectedItem] = useState(null)
 
 

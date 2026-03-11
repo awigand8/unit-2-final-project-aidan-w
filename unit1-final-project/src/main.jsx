@@ -9,9 +9,9 @@ import { StrictMode } from 'react';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
-    <DataProvider>
-      <App />
-    </DataProvider>
+      <DataProvider>
+        <App />
+      </DataProvider>
     </HashRouter>
   </StrictMode>
 );

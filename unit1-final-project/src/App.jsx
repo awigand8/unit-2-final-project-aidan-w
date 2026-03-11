@@ -8,21 +8,6 @@ import BucketList from './components/BucketList';
 import './App.css';
 
 function App() {
-  // const [bucketList, setBucketList] = useState([]);
-
-  // function handleAdd(item) {
-  //   setBucketList((prev) => {
-  //     if (prev.includes(item.name)) {
-  //       return prev;
-  //     }
-  //     return [...prev, item.name]; // stores the attraction name
-  //   });
-  // }
-
-  // function handleDeleteItem(name) {
-  //   setBucketList((prev) => prev.filter(item => item !== name));
-  // };
-
   return (
     <div className="App">
       <title>Meet Me in STL</title>
