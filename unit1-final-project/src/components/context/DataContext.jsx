@@ -45,7 +45,12 @@ export const DataProvider = ({ children }) => {
 
             const newItem = await response.json();
 
-            setBucketItems((prev) => [...prev, newItem]);
+            setBucketItems((prev) => {
+                if (prev.includes(newItem)) {
+                    return prev;
+                }
+                return [...prev, newItem];
+            });
         } catch (error) {
             console.error("Error adding bucket list item:", error);
         }
