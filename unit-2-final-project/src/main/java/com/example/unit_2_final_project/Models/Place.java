@@ -15,7 +15,7 @@ public class Place {
     @Lob
     private String description;
 
-    private String imageUrl;
+    private String image_url;
 
     public Place() {
     }
@@ -65,12 +65,11 @@ public class Place {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage_url(String image_url) { this.image_url = image_url;
     }
 }
 
