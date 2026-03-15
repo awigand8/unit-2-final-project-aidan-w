@@ -43,6 +43,11 @@ export const DataProvider = ({ children }) => {
                 },
             });
 
+            if (response.status === 409) {
+                alert("Item already exists in your bucket list.");
+                return;
+            }
+
             const newItem = await response.json();
 
             setBucketItems((prev) => [...prev, newItem]);
