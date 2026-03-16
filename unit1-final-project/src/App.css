@@ -164,7 +164,6 @@ ol {
 }
 
 .bucket-list-item {
-  font-size: 2 rem;
   font-weight: bold;
   padding: 15px;
   margin-bottom: 10px;
@@ -243,4 +242,18 @@ ol {
   color: white; 
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
   padding: 20px;
+}
+
+.header {
+  color: #111;
+  padding: 25px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
