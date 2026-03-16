@@ -1,9 +1,10 @@
 import Copyright from './Copyright';
+import Header from './Header';
 
 function About() {
     return (
         <div className="aboutus">
-            <h1>About Us</h1>
+            <Header title="About Us"/>
             <img
                 src="images/stlpic.jpg" alt="St. Louis skyline at night" className="skyline" />
             <p>Meet Me in STL makes exploring St. Louis easy and fun. We bring together the city's

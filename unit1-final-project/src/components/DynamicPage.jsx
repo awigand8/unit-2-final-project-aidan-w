@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Button from './Button';
 import Card from './Card';
+import Header from "./Header";
 
 function DynamicPage({ title, data, onAdd }) {
     const [selectedItem, setSelectedItem] = useState(null)
@@ -37,7 +38,7 @@ function DynamicPage({ title, data, onAdd }) {
                 </>
             ) : ( //show list view if null
                 <>
-                    <h1>{title}</h1>
+                    <Header title={title}/>
 
                     <div className="card-grid">
                         {data.map((item) => (

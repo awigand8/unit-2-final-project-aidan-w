@@ -164,7 +164,6 @@ ol {
 }
 
 .bucket-list-item {
-  font-size: 2 rem;
   font-weight: bold;
   padding: 15px;
   margin-bottom: 10px;
@@ -195,6 +194,28 @@ ol {
 }
 
 .delete-button:active {
+  transform: scale(0.95);
+}
+
+.complete-button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  background-color:rgb(38, 255, 38);
+  border: 2px solid #ccc;
+  /* matches list border tone */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.complete-button:hover {
+  background-color:rgb(35, 210, 35);
+  border-color: #b3b3b3;
+}
+
+.complete-button:active {
   transform: scale(0.95);
 }
 
@@ -243,4 +264,18 @@ ol {
   color: white; 
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
   padding: 20px;
+}
+
+.app-message {
+  color: crimson;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.app-message {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
 }

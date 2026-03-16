@@ -2,12 +2,13 @@ import Copyright from "./Copyright";
 import Button from './Button';
 import { DataContext } from "./context/DataContext";
 import { useContext } from "react";
+import Header from "./Header";
 
 function BucketList() {
     const { bucketItems, deleteBucketItem, markBucketItemComplete } = useContext(DataContext);
     return (
         <div>
-            <h1>Bucket List</h1>
+            <Header title="Bucket List"/>
 
             <div className="bucket-list-container">
                 {bucketItems.length === 0 && <p>Nothing yet...</p>}

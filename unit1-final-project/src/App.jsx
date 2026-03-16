@@ -6,8 +6,13 @@ import Food from './components/Food';
 import Subscribe from './components/Subscribe';
 import BucketList from './components/BucketList';
 import './App.css';
+import { useContext } from 'react';
+import { DataContext } from './components/context/DataContext';
 
 function App() {
+
+  const { message } = useContext(DataContext);
+
   return (
     <div className="App">
       <title>Meet Me in STL</title>
@@ -23,6 +28,9 @@ function App() {
           <li><Link to="/subscribe">Subscribe</Link></li>
         </ul>
       </nav>
+
+      {message && <p className="app-message">{message}</p>}
+
       <Routes>
         <Route path="/" element={<Home />} />
 
