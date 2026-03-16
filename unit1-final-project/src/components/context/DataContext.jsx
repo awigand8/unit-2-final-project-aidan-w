@@ -34,6 +34,8 @@ export const DataProvider = ({ children }) => {
         }
     }
 
+    const [message, setMessage] = useState("");
+
     const addBucketItem = async (place) => {
         try {
             const response = await fetch(`http://localhost:8080/bucket-items?placeId=${place.id}`, {
@@ -43,9 +45,22 @@ export const DataProvider = ({ children }) => {
                 },
             });
 
+            if (response.status === 409) {
+                setMessage("Item already exists in your bucket list.");
+                setTimeout(() => {
+                setMessage("");
+            }, 3000);
+                return;
+            }
+
             const newItem = await response.json();
 
             setBucketItems((prev) => [...prev, newItem]);
+            setMessage("Item added to your bucket list!")
+            setTimeout(() => {
+                setMessage("");
+            }, 3000);
+
         } catch (error) {
             console.error("Error adding bucket list item:", error);
         }
@@ -95,7 +110,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     return (
-        <DataContext.Provider value={{ places, bucketItems, addBucketItem, deleteBucketItem, markBucketItemComplete }}>
+        <DataContext.Provider value={{ places, bucketItems, message, addBucketItem, deleteBucketItem, markBucketItemComplete }}>
             {children}
         </DataContext.Provider>
     )
