@@ -1,10 +1,11 @@
 import Copyright from './Copyright';
 import Button from './Button';
+import Header from './Header';
 
 function Subscribe() {
     return (
         <div className="subscribe">
-            <h1>Subscribe to Us!</h1>
+            <Header title="Subscribe to Us!"/>
             <p>Get the latest updates about attractions and events in STL!</p>
 
             <form>
