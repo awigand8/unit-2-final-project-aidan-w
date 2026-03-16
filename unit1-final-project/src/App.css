@@ -267,15 +267,15 @@ ol {
 }
 
 .app-message {
-  color: crimson;
-  font-weight: 600;
-  margin: 15px 0;
-}
-
-.app-message {
+  width: 100vw;
   background-color: #f4f4f4;
   border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 6px;
-  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 0;
+  color: crimson;
+  font-weight: 600;
+  margin: 15px 0 0 0;
+  box-sizing: border-box;
+  text-align: center;
+  max-width: none;
 }
