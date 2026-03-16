@@ -10,8 +10,8 @@ public class BucketItem {
     private int id;
     private boolean completed;
 
-    @ManyToOne
-    @JoinColumn(name = "place_id")
+    @OneToOne
+    @JoinColumn(name = "place_id", unique = true)
     private Place place;
 
     public BucketItem() {}

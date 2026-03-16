@@ -4,6 +4,8 @@ import com.example.unit_2_final_project.Models.BucketItem;
 import com.example.unit_2_final_project.Models.Place;
 import com.example.unit_2_final_project.Repositories.BucketItemRepository;
 import com.example.unit_2_final_project.Repositories.PlaceRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,10 +22,15 @@ public class BucketItemController {
     }
 
     @PostMapping
-    public BucketItem addItem(@RequestParam int placeId) {
+    public ResponseEntity<?> addItem(@RequestParam int placeId) {
+
+        if (bucketItemRepository.existsByPlace_Id(placeId)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Item already exists in bucket list");
+        }
+
         Place place = placeRepository.findById(placeId).orElseThrow(() -> new RuntimeException("Place not found"));
         BucketItem item = new BucketItem(place);
-        return bucketItemRepository.save(item);
+        return ResponseEntity.ok(bucketItemRepository.save(item));
     }
 
     @GetMapping
