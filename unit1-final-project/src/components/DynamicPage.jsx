@@ -38,7 +38,7 @@ function DynamicPage({ title, data, onAdd }) {
                 </>
             ) : ( //show list view if null
                 <>
-                    <Header title={title}/>
+                    <Header title={title} />
 
                     <div className="card-grid">
                         {data.map((item) => (

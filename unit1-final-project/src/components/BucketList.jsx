@@ -8,7 +8,7 @@ function BucketList() {
     const { bucketItems, deleteBucketItem, markBucketItemComplete } = useContext(DataContext);
     return (
         <div>
-            <Header title="Bucket List"/>
+            <Header title="Bucket List" />
 
             <div className="bucket-list-container">
                 {bucketItems.length === 0 && <p>Nothing yet...</p>}
