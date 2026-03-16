@@ -48,8 +48,8 @@ export const DataProvider = ({ children }) => {
             if (response.status === 409) {
                 setMessage("Item already exists in your bucket list.");
                 setTimeout(() => {
-                setMessage("");
-            }, 3000);
+                    setMessage("");
+                }, 3000);
                 return;
             }
 
