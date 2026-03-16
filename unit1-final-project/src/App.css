@@ -197,6 +197,28 @@ ol {
   transform: scale(0.95);
 }
 
+.complete-button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  background-color:rgb(38, 255, 38);
+  border: 2px solid #ccc;
+  /* matches list border tone */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.complete-button:hover {
+  background-color:rgb(35, 210, 35);
+  border-color: #b3b3b3;
+}
+
+.complete-button:active {
+  transform: scale(0.95);
+}
+
 .subscribe form {
   display: flex;
   flex-direction: column;
